@@ -3,12 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Chúc Mừng Sinh Nhật Người Yêu ♡ Không Gian "Mạn"</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Chúc Mừng Sinh Nhật Tìn iu ♡ </title>
     <!-- Google Fonts for romantic and clean aesthetic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,22 +20,25 @@
     <canvas id="star-canvas"></canvas>
     <canvas id="confetti-canvas"></canvas>
 
-    <!-- Trình điều khiển nhạc nổi cố định -->
-    <div id="floating-music-btn" class="floating-music-btn" title="Bật/Tắt nhạc nền">
-        <div class="music-disc" id="music-disc">
-            <span class="disc-inner">🎵</span>
+    <!-- Trình điều khiển nhạc nổi cố định: Chạm vào để đổi bài kế tiếp -->
+    <div id="floating-music-btn" class="floating-music-btn" title="Chạm vào đĩa hát để chuyển bài">
+        <div class="music-disc playing" id="music-disc">
+            <span class="disc-inner">💿</span>
         </div>
         <div class="music-label">
-            <span id="music-status-text">Bật nhạc</span>
-            <div class="sound-wave" id="sound-wave">
-                <span></span><span></span><span></span><span></span>
+            <span id="music-track-title" class="music-track-title">Giai Điệu Tình Yêu 01 ♡</span>
+            <div class="music-sub-label">
+                <span class="next-hint">⏭ Đổi bài</span>
+                <div class="sound-wave active" id="sound-wave">
+                    <span></span><span></span><span></span><span></span>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Âm thanh nền -->
-    <audio id="bg-music" loop preload="auto">
-        <source src="music/mtp.mp3" type="audio/mpeg">
+    <!-- Âm thanh nền (Không để loop để tự động chuyển tiếp bài khi hát xong) -->
+    <audio id="bg-music" preload="auto">
+        <source src="music/1.mp3" type="audio/mpeg">
         Trình duyệt không hỗ trợ audio.
     </audio>
 
@@ -41,7 +47,7 @@
         <div class="cheer-avatar">🐱✨</div>
         <div class="cheer-content">
             <div class="cheer-name">Lời nhắn từ trái tim:</div>
-            <div id="cheer-text" class="cheer-text">Cố lên cục cưng ơi, tớ luôn ở bên cổ vũ nè! ♡</div>
+            <div id="cheer-text" class="cheer-text">Cố lên cục cưng ơi, iu luôn ở bên cổ vũ nè! ♡</div>
         </div>
     </div>
 
@@ -49,7 +55,7 @@
     <header class="journey-header" id="journey-header" hidden>
         <div class="progress-info">
             <span class="stage-tag" id="stage-tag">Thử thách 1 / 6</span>
-            <span class="stage-name" id="stage-name">Cửa ngõ không gian</span>
+            <span class="stage-name" id="stage-name">Cánh cửa không gian</span>
         </div>
         <div class="progress-track">
             <div class="progress-bar-fill" id="progress-bar-fill"></div>
@@ -72,46 +78,47 @@
             <div class="badge-romance">✦ FROM THT WITH LOVE ✦</div>
             <h1 class="main-title">Mật Mã Trái Tim</h1>
             <h2 class="sub-title">Chào mừng người chơi thứ 01 đã đến với không gian "mạn"</h2>
-            
+
             <div class="intro-illustration">
                 <div class="floating-heart-avatar">💖</div>
                 <div class="sparkle-ring"></div>
             </div>
 
             <p class="intro-desc">
-                Cả vũ trụ dịu dàng này được chuẩn bị riêng cho một người vô cùng đặc biệt. 
-                Hãy vượt qua <strong>6 thử thách nhỏ</strong> đầy ắp yêu thương để mở ra kho báu bí mật đang chờ đón cậu nhé!
+                Cả vũ trụ dịu dàng này được chuẩn bị riêng cho một người vô cùng đặc biệt.
+                Hãy vượt qua <strong>6 thử thách nhỏ</strong> đầy ắp yêu thương để mở ra
+                kho báu bí mật đang chờ đón bé iu nho!
             </p>
 
             <button id="btn-start" class="btn-primary glow-pulse">
-                <span>Bắt đầu cuộc phiêu lưu ✨</span>
+                <span>Bắt đầu cuộc phiêu lưu thoai ✨</span>
             </button>
 
             <p class="small-hint">
-                💡 <em>Bật loa hoặc đeo tai nghe để có trải nghiệm tuyệt vời nhất nhé cục cưng!</em>
+                💡 <em>Bật loa hoặc đeo tai nghe để có trải nghiệm trọn vẹn nhe cục cưng</em>
             </p>
         </section>
 
         <!-- =================== THỬ THÁCH 1: ĐỐ VUI KHỞI ĐẦU =================== -->
         <section id="screen-challenge-1" class="screen-card" hidden>
             <div class="challenge-badge">Thử thách 1 • Điểm Dừng Đầu Tiên</div>
-            <h2 class="challenge-title">Cửa Ngõ Ngọt Ngào</h2>
+            <h2 class="challenge-title">Cánh cửa màu hồng</h2>
             <p class="challenge-desc">
-                Đố người chơi thứ 01 biết: Điều tuyệt vời nhất mà vũ trụ đã mang đến cho tớ là gì nè?
+                Đố cục cưng biết: Điều tuyệt vời nhất mà zũ chụ đã mang tới cho iu là gì nè?
             </p>
 
             <div class="options-group" id="c1-options">
                 <button class="option-btn" data-correct="false">
                     <span class="opt-key">A</span>
-                    <span class="opt-text">Một triệu vì sao lấp lánh trên bầu trời đêm</span>
+                    <span class="opt-text">Những chuyến đi có thh cùng đồng hành</span>
                 </button>
                 <button class="option-btn" data-correct="true">
                     <span class="opt-key">B</span>
-                    <span class="opt-text">Là sự xuất hiện dịu dàng của cậu trong đời tớ ♡</span>
+                    <span class="opt-text">Là sự xuất hiện dịu dàng đầy ắp iu thưn của thh dành cho tht</span>
                 </button>
                 <button class="option-btn" data-correct="false">
                     <span class="opt-key">C</span>
-                    <span class="opt-text">Một chiếc vé du hành vòng quanh thế giới</span>
+                    <span class="opt-text">Nhiều bông hoa dễ thương mà thh tặng bất ngờ</span>
                 </button>
             </div>
 
@@ -120,10 +127,10 @@
 
         <!-- =================== THỬ THÁCH 2: KÉO THẢ GOM SAO =================== -->
         <section id="screen-challenge-2" class="screen-card" hidden>
-            <div class="challenge-badge">Thử thách 2 • Hũ Thủy Tinh Ước Nguyện</div>
+            <div class="challenge-badge">Thử thách 2 • Lọ Thủy Tinh Ước Nguyện</div>
             <h2 class="challenge-title">Thu Thập Yêu Thương</h2>
             <p class="challenge-desc">
-                Kéo (hoặc chạm) <strong>3 ngôi sao điều ước</strong> vào Chiếc Hũ Phép Thuật ở bên dưới nhé!
+                Kéo (hoặc chạm) <strong>3 ngôi sao điều ước</strong> vào Chiếc Lọ Phép Thuật ở bên dưới nha!
             </p>
 
             <div class="stars-stage">
@@ -135,29 +142,67 @@
                     </div>
                     <div class="star-item draggable-item" id="star-2" data-id="2">
                         <span class="star-icon">🌟</span>
-                        <span class="star-label">Luôn mỉm cười xinh</span>
+                        <span class="star-label">Mạnh khoẻ & Yêu em</span>
                     </div>
                     <div class="star-item draggable-item" id="star-3" data-id="3">
                         <span class="star-icon">✨</span>
-                        <span class="star-label">Mãi bên nhau nhé</span>
+                        <span class="star-label">Có thiệt nhiều lộc trong tài khoản</span>
                     </div>
                 </div>
 
-                <!-- Chiếc Hũ Nhận Sao -->
+                <!-- Chiếc Lọ Thủy Tinh Nhận Sao -->
                 <div class="wish-jar-target" id="wish-jar-target">
                     <div class="jar-visual">
-                        <div class="jar-lid"></div>
-                        <div class="jar-body">
-                            <div class="jar-glow"></div>
-                            <div class="jar-collected-stars" id="jar-collected-stars"></div>
-                            <span class="jar-icon">🏺</span>
-                        </div>
+                        <svg class="glass-jar-svg" viewBox="0 0 100 120" width="84" height="100">
+                            <defs>
+                                <linearGradient id="glassLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(255, 255, 255, 0.95)" />
+                                    <stop offset="25%" stop-color="rgba(240, 248, 255, 0.45)" />
+                                    <stop offset="70%" stop-color="rgba(255, 220, 245, 0.4)" />
+                                    <stop offset="100%" stop-color="rgba(255, 255, 255, 0.85)" />
+                                </linearGradient>
+                                <linearGradient id="corkLinear" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#ab7743" />
+                                    <stop offset="50%" stop-color="#d49f6a" />
+                                    <stop offset="100%" stop-color="#915f2e" />
+                                </linearGradient>
+                                <filter id="bottleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(255,101,132,0.3)" />
+                                </filter>
+                            </defs>
+                            <!-- Nắp bần gỗ -->
+                            <polygon points="36,6 64,6 62,18 38,18" fill="url(#corkLinear)" rx="2" />
+                            <!-- Miệng lọ & cổ lọ thủy tinh -->
+                            <rect x="33" y="16" width="34" height="6" rx="3" fill="#e8f3fc" stroke="#ffffff"
+                                stroke-width="1.5" />
+                            <rect x="38" y="21" width="24" height="10" fill="url(#glassLinear)" stroke="#ffffff"
+                                stroke-width="1" />
+                            <!-- Ruy băng hồng & charm trái tim -->
+                            <line x1="36" y1="26" x2="64" y2="26" stroke="#ff6584" stroke-width="3"
+                                stroke-linecap="round" />
+                            <path
+                                d="M50,28 C47,25 43,27 45,30 C47,33 50,35 50,35 C50,35 53,33 55,30 C57,27 53,25 50,28 Z"
+                                fill="#ff4b72" />
+                            <!-- Thân lọ thủy tinh phình tròn sang trọng -->
+                            <path
+                                d="M38,30 C24,35 15,46 15,66 C15,92 20,112 50,112 C80,112 85,92 85,66 C85,46 76,35 62,30 Z"
+                                fill="url(#glassLinear)" stroke="#ffffff" stroke-width="2.5"
+                                filter="url(#bottleGlow)" />
+                            <!-- Vệt sáng phản quang trên mặt kính thủy tinh -->
+                            <path
+                                d="M22,65 C22,82 25,98 38,106 C28,98 26,80 26,65 C26,52 32,42 40,36 C30,42 22,52 22,65 Z"
+                                fill="rgba(255,255,255,0.7)" />
+                            <ellipse cx="73" cy="50" rx="3.5" ry="8" transform="rotate(-20, 73, 50)"
+                                fill="rgba(255,255,255,0.6)" />
+                        </svg>
+                        <div class="jar-glow"></div>
+                        <div class="jar-collected-stars" id="jar-collected-stars"></div>
                     </div>
-                    <div class="jar-label">Hũ Điều Ước (<span id="stars-collected-count">0</span>/3)</div>
+                    <div class="jar-label">Lọ Thủy Tinh (<span id="stars-collected-count">0</span>/3)</div>
                 </div>
             </div>
 
-            <p class="small-tip">💡 <em>Mẹo: Bạn có thể kéo thả hoặc chỉ cần chạm vào từng ngôi sao là sao sẽ bay vào hũ!</em></p>
+            <p class="small-tip">💡 <em>Mẹo: Kéo thả hoặc chỉ cần chạm vào từng ngôi sao là được nhen!</em></p>
             <div id="c2-feedback" class="feedback-msg" hidden></div>
         </section>
 
@@ -166,21 +211,22 @@
             <div class="challenge-badge">Thử thách 3 • Mật Mã Cảm Xúc</div>
             <h2 class="challenge-title">Thấu Hiểu Trái Tim</h2>
             <p class="challenge-desc">
-                Mỗi khi người ấy mệt mỏi hay có chút buồn trong lòng, tớ muốn làm gì nhất cho người ấy?
+                Mỗi khi người ấy mệt mỏi hay có chuyện buồn trong lòng, iu muốn làm gì nhất cho người ấy?
             </p>
 
             <div class="options-group" id="c3-options">
                 <button class="option-btn" data-correct="false">
                     <span class="opt-key">A</span>
-                    <span class="opt-text">Lặng lẽ ngồi bên cạnh, lắng nghe và ôm cậu thật chặt</span>
+                    <span class="opt-text">Lặng lẽ ngồi bên cạnh, lắng nghe và ôm tìn iu thiệtttt chặt</span>
                 </button>
                 <button class="option-btn" data-correct="false">
                     <span class="opt-key">B</span>
-                    <span class="opt-text">Mua đồ ăn ngon và nói những lời ngọt ngào dỗ dành</span>
+                    <span class="opt-text">Mua đồ ăn ngon và nói những lời ngọt ngào dỗ dành em bé của em</span>
                 </button>
                 <button class="option-btn" data-correct="true">
                     <span class="opt-key">C</span>
-                    <span class="opt-text">Cả hai điều trên, vì cậu luôn xứng đáng được cưng chiều nhất ♡</span>
+                    <span class="opt-text">Cả hai điều trên, có khi còn nhiều hơn, vì bé iu của em luôn xứng đáng
+                        được cưng chiều nhất ♡</span>
                 </button>
             </div>
 
@@ -190,9 +236,10 @@
         <!-- =================== THỬ THÁCH 4: CHÌA KHÓA MỞ TRÁI TIM =================== -->
         <section id="screen-challenge-4" class="screen-card" hidden>
             <div class="challenge-badge">Thử thách 4 • Cánh Cửa Bí Mật</div>
-            <h2 class="challenge-title">Mở Khóa Trái Tim</h2>
+            <h2 class="challenge-title">Mở Khoá Trái Tim</h2>
             <p class="challenge-desc">
-                Hãy kéo chiếc <strong>chìa khóa vàng 🗝️</strong> vào <strong>ổ khóa trái tim 💖</strong> để mở tầng không gian tiếp theo!
+                Hãy kéo chiếc <strong>chìa khóa vàng 🗝️</strong> vào <strong>ổ khóa trái tim 💖</strong> để
+                mở tầng không gian tiếp theo!
             </p>
 
             <div class="key-lock-stage">
@@ -200,7 +247,7 @@
                 <div class="key-source-area">
                     <div class="magic-key draggable-item" id="magic-key">
                         <span class="key-emoji">🗝️</span>
-                        <span class="key-text">Chìa Khóa Yêu Thương</span>
+                        <span class="key-text">Chìa Khoá Yêu Thương</span>
                     </div>
                 </div>
 
@@ -214,11 +261,12 @@
                             <span class="keyhole">🗝</span>
                         </div>
                     </div>
-                    <div class="lock-label" id="lock-label">Khóa Trái Tim</div>
+                    <div class="lock-label" id="lock-label">Khoá Trái Tim</div>
                 </div>
             </div>
 
-            <p class="small-tip">💡 <em>Mẹo: Kéo chìa khóa đến ổ khóa hoặc chạm vào chìa khóa để tự động tra chìa!</em></p>
+            <p class="small-tip">💡 <em>Mẹo: Kéo chìa khoá tới ổ hoặc chạm vào chìa khoá.</em>
+            </p>
             <div id="c4-feedback" class="feedback-msg" hidden></div>
         </section>
 
@@ -227,7 +275,7 @@
             <div class="challenge-badge">Thử thách 5 • Mảnh Ghép Hoàn Hảo</div>
             <h2 class="challenge-title">Thông Điệp Trái Tim</h2>
             <p class="challenge-desc">
-                Chạm vào các mảnh chữ để ghép thành câu thông điệp sinh nhật hoàn chỉnh nhé:
+                Chạm vào các mảnh chữ để ghép thành câu thông điệp hoàn chỉnh nha:
             </p>
 
             <!-- Khung vị trí kết quả -->
@@ -261,9 +309,9 @@
         <!-- =================== THỬ THÁCH 6: THẮP NẾN SINH NHẬT =================== -->
         <section id="screen-challenge-6" class="screen-card" hidden>
             <div class="challenge-badge">Thử thách 6 • Trạm Dừng Cuối Cùng</div>
-            <h2 class="challenge-title">Chiếc Bánh Kem Diệu Kỳ</h2>
+            <h2 class="challenge-title">Bánh kem ngọt ngào</h2>
             <p class="challenge-desc">
-                Chạm vào chiếc bánh để <strong>thắp sáng ngọn nến</strong> và nhắm mắt ước một điều ước sinh nhật thật đẹp nhé...
+                Chạm vào bánh để <strong>thắp sáng</strong> và nhắm mắt ước một điều ước sinh nhật thiệt đẹp nhen
             </p>
 
             <div class="cake-interactive-box" id="cake-interactive-box">
@@ -287,16 +335,16 @@
                     <div class="cake-plate"></div>
                 </div>
                 <div class="candle-instruction" id="candle-instruction">
-                    👉 <em>Chạm vào nến để thắp sáng</em> 👈
+                    👉 <em>Chạm vào đèn cầy để thắp sáng</em> 👈
                 </div>
             </div>
 
             <div id="c6-success-box" class="c6-success-box" hidden>
                 <p class="wish-prompt">
-                    ✨ Ngọn nến đã thắp sáng cả không gian! Điều ước của cậu đã được vũ trụ lắng nghe và ghi lại. 
+                    ✨ Ngọn đèn đã thắp sáng cả không gian! Điều ước đã được zũ chụ lắng nghe và ghi lại roii nha!
                 </p>
                 <button id="btn-unlock-treasure" class="btn-primary glow-pulse-gold">
-                    🎁 MỞ KHO BÁU BÍ MẬT DÀNH CHO CẬU 🎁
+                    🎁 MỞ KHO BÁU BÍ MẬT DÀNH CHO ĂM CHÃ 🎁
                 </button>
             </div>
         </section>
@@ -304,7 +352,7 @@
         <!-- =================== KHO BÁU TUYỆT VỜI (TREASURE) =================== -->
         <section id="screen-treasure" class="screen-card treasure-card" hidden>
             <div class="treasure-header">
-                <div class="badge-romance gold-badge">✦ KHO BÁU ĐÃ ĐƯỢC MỞ KHÓA ✦</div>
+                <div class="badge-romance gold-badge">✦ KHO BÁU ĐÃ ĐƯỢC MỞ KHOÁ ✦</div>
                 <h1 class="treasure-title">Chúc Mừng Sinh Nhật Tình Yêu! 🎂💖</h1>
                 <p class="treasure-subtitle">Toàn bộ không gian "mạn" và trái tim này là của cậu ♡</p>
             </div>
@@ -312,27 +360,33 @@
             <!-- Lá thư sinh nhật lãng mạn -->
             <div class="love-letter-box">
                 <div class="letter-stamp">💌 Happy Birthday</div>
-                <h3 class="letter-greeting">Gửi người đặc biệt nhất của tớ,</h3>
+                <h3 class="letter-greeting">Gửi người đặc biệt nhất của em,</h3>
                 <p class="letter-body">
-                    Hôm nay là ngày tuyệt vời nhất, vì ngày này năm ấy, một thiên thần đáng yêu đã xuất hiện trên thế giới này. 
-                    Cảm ơn cậu vì đã đến bên tớ, đã mang theo tất cả những ấm áp, ngọt ngào và những nụ cười rạng rỡ nhất.
+                    Hôm nay là ngày tuyệt vời nhất, vì ngày này năm ấy, một thiên thần đáng iu đã xuất hiện trên thế
+                    giới này hê hê.
+                    Cảm ơn thiên thần đáng iu đã mang nhiều sự tốt đẹp đến bên cạnh em iu nha.
+                    Cảm ơn tìn iu đã mang theo tất cả những ấm áp, ngọt ngào và những nụ cười rạng rỡ
+                    nhất dành cho em.
                 </p>
                 <p class="letter-body">
-                    Bước sang tuổi mới, chúc người yêu của tớ luôn mạnh khỏe, bình an, gặp thật nhiều may mắn và luôn rạng ngời hạnh phúc. 
-                    Dù ngoài kia có bao nhiêu bão giông hay mệt mỏi, hãy nhớ rằng luôn có một người ở đây yêu thương, che chở và đồng hành cùng cậu trên mọi nẻo đường.
+                    Bước sang tuổi mới, chúc cục cưng của em luôn mạnh khỏe, bình an, gặp thiệttt nhiều may mắn và luôn
+                    rạng ngời hạnh phúc.
+                    Dù ngoài kia có bao nhiêu bão giông hay mệt mỏi, hãy nhớ rằng luôn có em iu ở đây yêu thương,
+                    sẵn sàng lắng nghe và đồng hành cùng anh iu trên mọi nẻo đường nhen.
                 </p>
                 <p class="letter-signature">
-                    ♡ Yêu cậu nhiều hơn những vì sao trên bầu trời ♡
+                    ♡ iu bé iu nhiều hơn những vì sao trên bầu trời lun hê hê ♡
                 </p>
             </div>
 
-            <!-- Khu vực Album kỷ niệm 26 ảnh -->
+            <!-- Khu vực Album kỷ niệm 23 ảnh -->
             <div class="gallery-section">
                 <div class="gallery-header-row">
                     <h3 class="section-heading">📸 Những Mảnh Ghép Kỷ Niệm ♡</h3>
                     <div class="gallery-tabs">
                         <button id="tab-slideshow" class="tab-btn active">Trình chiếu</button>
-                        <button id="tab-grid" class="tab-btn">Tất cả ảnh (<span id="total-photos-count">25</span>)</button>
+                        <button id="tab-grid" class="tab-btn">Tất cả ảnh (<span
+                                id="total-photos-count">23</span>)</button>
                     </div>
                 </div>
 
@@ -340,8 +394,8 @@
                 <div id="slideshow-view" class="slideshow-container">
                     <div class="slideshow-card">
                         <div class="slide-image-wrapper">
-                            <img id="slide-img" src="images/1.jpg" alt="Kỷ niệm của chúng mình" loading="lazy">
-                            <div class="slide-badge" id="slide-counter">Ảnh 1 / 25</div>
+                            <img id="slide-img" src="images/p1.jpg" alt="Kỷ niệm của chúng mình" loading="lazy">
+                            <div class="slide-badge" id="slide-counter">Ảnh 1 / 23</div>
                         </div>
                         <div class="slide-caption-box">
                             <p id="slide-caption" class="slide-caption">Một ngày thật vui khi chúng mình ở bên nhau.</p>
@@ -350,10 +404,11 @@
 
                     <div class="slideshow-controls">
                         <button id="btn-prev-slide" class="slide-ctrl-btn" title="Ảnh trước">‹</button>
-                        <button id="btn-play-pause-slide" class="slide-ctrl-btn play-pause-btn" title="Tự động phát">▶ Tự chạy</button>
+                        <button id="btn-play-pause-slide" class="slide-ctrl-btn play-pause-btn" title="Tự động phát">▶
+                            Tự chạy</button>
                         <button id="btn-next-slide" class="slide-ctrl-btn" title="Ảnh tiếp theo">›</button>
                     </div>
-                    <p class="small-tip">💡 <em>Mẹo: Bạn có thể vuốt ngón tay sang trái/phải để chuyển ảnh!</em></p>
+                    <p class="small-tip">💡 <em>Mẹo: Vuốt ngón tay sang trái/phải để chuyển ảnh!</em></p>
                 </div>
 
                 <!-- 2. Chế độ Grid tất cả ảnh (Polaroid) -->
@@ -366,11 +421,13 @@
 
             <!-- Hộp gửi lời nhắn yêu thương -->
             <div class="wish-box-card">
-                <h3>💌 Gửi Lời Nhắn Về Cho Tớ ♡</h3>
-                <p class="wish-box-desc">Hãy để lại một điều ước, một lời nhắn nhủ hay cảm xúc của cậu lúc này nhé:</p>
-                
+                <h3>💌 Gửi Lời Nhắn Về Cho Tht ♡</h3>
+                <p class="wish-box-desc">Hãy để lại một điều ước, một lời nhắn nhủ hay cảm xúc của bé iu lúc này nha:
+                </p>
+
                 <div class="wish-input-group">
-                    <textarea id="wish-input" placeholder="Viết điều gì đó thật dễ thương gửi lại cho tớ nè..." rows="3"></textarea>
+                    <textarea id="wish-input" placeholder="Viết điều gì đó thiệt dễ thương gửi lại cho iu i"
+                        rows="3"></textarea>
                     <button id="btn-send-wish" class="btn-primary">Gửi Yêu Thương 💕</button>
                 </div>
 
@@ -393,7 +450,7 @@
             </div>
 
             <footer class="game-footer">
-                <p>Made with all my heart for you ♡ Happy Birthday!</p>
+                <p>Made with all my heart for you ♡ Happy Birthday Honey!</p>
             </footer>
         </section>
 

@@ -5,52 +5,49 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     // --------------------------------------------------------
-    // 1. DANH SÁCH ẢNH & LỜI ĐỀ TỪ KỶ NIỆM (26 ẢNH)
+    // 1. DANH SÁCH ẢNH & LỜI ĐỀ TỪ KỶ NIỆM (23 ẢNH)
     // --------------------------------------------------------
-    // Thư mục images hiện có 25 ảnh: 1..16 và 18..26 (17 vắng mặt)
-    // Chúng ta định nghĩa danh sách sẵn sàng cho toàn bộ ảnh
     const photoList = [
-        { id: 1, src: "images/1.jpg", caption: "Khoảnh khắc đầu tiên khi hai ánh mắt chạm nhau, thế giới bỗng trở nên thật dịu dàng." },
-        { id: 2, src: "images/2.jpg", caption: "Nụ cười rạng rỡ của cậu luôn là liều thuốc chữa lành mọi mệt mỏi trong tớ." },
-        { id: 3, src: "images/3.jpg", caption: "Những buổi chiều bình yên, chỉ cần ngồi bên cạnh cậu là đã thấy trọn vẹn." },
-        { id: 4, src: "images/4.jpg", caption: "Từng góc phố, từng con đường chúng mình cùng đi qua đều trở thành kỷ niệm đẹp." },
-        { id: 5, src: "images/5.jpg", caption: "Mỗi chuyến đi xa là một trang mới trong cuốn nhật ký tình yêu của hai đứa." },
-        { id: 6, src: "images/6.jpg", caption: "Bên cậu, tớ luôn được là chính mình – một cách ngốc nghếch nhưng hạnh phúc nhất." },
-        { id: 7, src: "images/7.jpg", caption: "Cảm ơn cậu vì đã luôn kiên nhẫn, dịu dàng và chở che cho tớ từng chút một." },
-        { id: 8, src: "images/8.jpg", caption: "Những cái ôm ấm áp xua tan đi tất cả những giông bão của thế giới ngoài kia." },
-        { id: 9, src: "images/9.jpg", caption: "Dù là một bữa ăn đơn giản hay quán quen ven đường, có cậu thì món nào cũng thấy ngon." },
-        { id: 10, src: "images/10.jpg", caption: "Mỗi bức hình là một mảnh ghép ký ức vô giá mà tớ luôn nâng niu cất giữ." },
-        { id: 11, src: "images/11.jpg", caption: "Thích nhất là cái cách cậu cười tít mắt mỗi khi nhìn thấy tớ hay được ăn món ngon." },
-        { id: 12, src: "images/12.jpg", caption: "Khoảnh khắc ấy, tớ biết mình đã tìm thấy cả bầu trời bình yên của riêng mình." },
-        { id: 13, src: "images/13.jpg", caption: "Cùng nhau đi qua những ngày nắng đẹp rực rỡ lẫn những cơn mưa rào bất chợt." },
-        { id: 14, src: "images/14.jpg", caption: "Cảm ơn vì đã luôn ở đó, lắng nghe và thấu hiểu tớ ngay cả khi tớ không nói nên lời." },
-        { id: 15, src: "images/15.jpg", caption: "Bàn tay ấm áp nắm chặt lấy tay tớ giữa dòng người tấp nập." },
-        { id: 16, src: "images/16.jpg", caption: "Những ánh mắt trao nhau mà chẳng cần bất kỳ lời nói nào cũng hiểu được lòng nhau." },
-        { id: 18, src: "images/18.jpg", caption: "Góc kỷ niệm ngọt ngào ghi dấu nụ cười tỏa nắng của người tớ yêu thương nhất." },
-        { id: 19, src: "images/19.jpg", caption: "Dù thời gian có trôi nhanh thế nào, tình cảm này sẽ luôn vẹn nguyên như ngày đầu." },
-        { id: 20, src: "images/20.jpg", caption: "Hạnh phúc đôi khi chỉ đơn giản là được cùng cậu ngắm hoàng hôn buông xuống mỗi chiều." },
-        { id: 21, src: "images/21.jpg", caption: "Cậu chính là điều may mắn và dịu dàng nhất mà cuộc sống đã ưu ái ban tặng cho tớ." },
-        { id: 22, src: "images/22.jpg", caption: "Chỉ cần nhìn thấy nụ cười của cậu là mọi âu lo trong ngày đều tan biến hết." },
-        { id: 23, src: "images/23.jpg", caption: "Cùng nhau già đi, cùng nhau đón thật nhiều mùa sinh nhật ngọt ngào nữa nhé." },
-        { id: 24, src: "images/24.jpg", caption: "Tớ yêu tất cả những điều thuộc về cậu, từ những nét đáng yêu đến cả những lúc bướng bỉnh." },
-        { id: 25, src: "images/25.jpg", caption: "Kho báu lớn nhất trong cuộc đời tớ không ở đâu xa, mà chính là cậu đấy." },
-        { id: 26, src: "images/26.jpg", caption: "Chúc mừng sinh nhật tình yêu to bự của tớ! Yêu cậu hơn cả vũ trụ này ♡" }
+        { id: 1, src: "images/p1.jpg", caption: "Tuổi học trò thiệt là dễ thương vì có thh đồng hành với tht." },
+        { id: 2, src: "images/p2.jpg", caption: "Mỗi tấm hình là một mảnh ghép ký ức vô giá mà iu luôn nâng niu cất giữ." },
+        { id: 3, src: "images/p3.jpg", caption: "Nụ cười rạng rỡ của bé mỗi khi bên cạnh iu luôn là liều thuốc chữa lành hiệu quả ó." },
+        { id: 4, src: "images/p4.jpg", caption: "Cảm ơn thh đã khiến từng con đường ở Cần Thơ đều trở thành kỷ niệm đẹp của tht." },
+        { id: 5, src: "images/p5.jpg", caption: "Không cần quá nhiều quá cáp, chỉ cần thh ở bên cạnh là tht đã thấy mình có một ngày trọn vẹn ròii." },
+        { id: 6, src: "images/p6.jpg", caption: "Bên thh, iu luôn được là chính mình – less perfect, but much happier." },
+        { id: 7, src: "images/p7.jpg", caption: "Cảm ơn bé iu vì đã luôn kiên nhẫn, dịu dàng và chở che cho iu iu từng bước một." },
+        { id: 8, src: "images/p8.jpg", caption: "Hạnh phúc đôi khi chỉ đơn giản là được cùng nhau làm những điều bình dị ở những nơi quen thuộc." },
+        { id: 9, src: "images/p9.jpg", caption: "Thích nhất cái cách anh iu cười hong thấy mặt trời mỗi khi nắm tay đi với iu iu." },
+        { id: 10, src: "images/p10.jpg", caption: "Cảm ơn anh iu đã luôn là chỗ dựa vững chắc cho em iu mỗi khi em cần." },
+        { id: 11, src: "images/p11.jpg", caption: "Không phải lần đầu tiên đi với nhau nhưng luôn là trải nghiệm đầu tiên khi ở bên thh." },
+        { id: 12, src: "images/p12.jpg", caption: "Những tấm hình daily thh không ngại share, iu đều thấy dễ thương moa moa." },
+        { id: 13, src: "images/p13.jpg", caption: "Cảm ơn bé đã chở iu đi qua những ngày nắng đẹp rực rỡ lẫn những cơn mưa rào bất chợt." },
+        { id: 14, src: "images/p14.jpg", caption: "Cảm ơn Thanh Hưng vì đã luôn ở đó, lắng nghe và đồng hành với Thảo Trinh ngay những lúc em không nói nên lời." },
+        { id: 15, src: "images/p15.jpg", caption: "Thích được anh iu hun hun lắm lunnn!!!" },
+        { id: 16, src: "images/p16.jpg", caption: "Mỗi ngày trôi qua lại thấy yêu thương bé iu thim nhìu nhìu nũa." },
+        { id: 17, src: "images/p17.jpg", caption: "Khoảnh khắc ấy, em biết mình đã tìm thấy một bầu trời chmúa hmề của riêng mình." },
+        { id: 18, src: "images/p18.jpg", caption: "Thh chính là điều may mắn và dịu dàng nhất mà zũ chụ đã ưu ái ban tặng cho tht ó." },
+        { id: 19, src: "images/p19.jpg", caption: "Nơi ghi dấu nụ cười tỏa nắng của người em iu thương nhất." },
+        { id: 20, src: "images/p20.jpg", caption: "Chỉ cần nhìn thấy nụ cười của bé iu là mọi âu lo trong ngày của iu iu đều tan biến hết." },
+        { id: 21, src: "images/p21.jpg", caption: "Mỗi chuyến đi xa đối với iu đều là một trang mới trong cuốn nhật ký tình yêu của hai đứa mình nè." },
+        { id: 22, src: "images/p22.jpg", caption: "Anh iu của em thiệt là ngầu quá điiiii!" },
+        { id: 23, src: "images/p23.jpg", caption: "Dù thời gian có trôi nhanh thế nào, tình cảm dành cho thh sẽ luôn vẹn nguyên như ngày đầu. Chúc mừng sinh nhật tình yêu to bự của em! Yêu bé nhìu hơn zũ chụ này lun đó nhe hehe ♡" }
     ];
+
 
     // --------------------------------------------------------
     // 2. LỜI ĐỘNG VIÊN & CỔ VŨ DỊU DÀNG (CHEERING MESSAGES)
     // --------------------------------------------------------
     const sweetCheerMessages = [
-        "Cố lên cục cưng ơi, tớ luôn ở bên cạnh cổ vũ nè! ♡",
+        "Cố lên cục cưng ơi, iu luôn ở bên cạnh cổ vũ bé nè! ♡",
         "You're doing amazing, my love! 💕",
-        "Giỏi quá trời ơi! Đúng là người yêu của tớ có khác 🥰",
-        "Một chút nữa thôi là tới kho báu rồi nè, chờ tớ nhé! 🌟",
-        "Dù ngoài kia có mệt mỏi thế nào, ở đây luôn có tớ thương cậu nhất 🌸",
-        "Cứ bình tĩnh nha bé yêu, kho báu ngọt ngào nhất đang chờ cậu đó nha!",
-        "Gửi tặng cậu một cái ôm thật ấm áp qua màn hình nè! 🤗",
-        "Mỗi bước đi của cậu đều làm trái tim tớ rung rinh đó nha! 💓",
+        "Giỏi quá zay ta! Đúng là người yêu của em có khác 🥰",
+        "Một xíu nữa thoii là tới kho báu roi ne, chờ iu nho! 🌟",
+        "Dù ngoài kia có mệt mỏi thế nào, ở đây luôn có iu thương bé nhứt 🌸",
+        "Cứ bình tĩnh nha bé iu, kho báu ngọt ngào nhất đang chờ bé đó nha!",
+        "Gửi tặng anh iu một cái ôm thiệt ấm áp qua màn hình nè! 🤗",
+        "Mỗi bước đi của bé đều làm trái tim iu rung rinh đó nha! 💓",
         "You are the brightest star in my universe! ✨",
-        "Cục cưng đỉnh chóp luôn á! Tiếp tục tiến lên nào! 🎉"
+        "Cục cưng đỉnh chóp luôn á! Tiếp tục tiến lên nè! 🎉"
     ];
 
     const cheerToast = document.getElementById("cheer-toast");
@@ -75,55 +72,111 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --------------------------------------------------------
-    // 3. ĐIỀU KHIỂN ÂM NHẠC NỀN (AUDIO CONTROLLER)
+    // 3. DANH SÁCH BÀI HÁT & ĐIỀU KHIỂN ĐĨA HÁT (PLAYLIST)
     // --------------------------------------------------------
+    const playlist = [
+        { title: "Nơi này có anh iu ♡", src: "music/1.mp3" },
+        { title: "Mặt trời của em iu ♡", src: "music/2.mp3" },
+        { title: "Mỗi ngày iu iu ♡", src: "music/3.mp3" },
+        { title: "Thanh Hưng iu Thảo Trinh 04 ♡", src: "music/4.mp3" },
+        { title: "Thh là siu nhưn ♡", src: "music/5.mp3" },
+        { title: "iu là bà chã hơm ♡", src: "music/6.mp3" },
+        { title: "Thinking 'bout you ♡", src: "music/7.mp3" },
+        { title: "'Cause I love u ♡", src: "music/8.mp3" }
+    ];
+
+    let currentTrackIdx = 0;
+    let isMusicPlaying = false;
+
     const bgMusic = document.getElementById("bg-music");
     const musicBtn = document.getElementById("floating-music-btn");
     const musicDisc = document.getElementById("music-disc");
     const soundWave = document.getElementById("sound-wave");
-    const musicStatusText = document.getElementById("music-status-text");
-    let isMusicPlaying = false;
+    const musicTrackTitle = document.getElementById("music-track-title");
 
-    function setMusicState(playing) {
-        isMusicPlaying = playing;
-        if (playing) {
+    function updateTrackUI() {
+        const track = playlist[currentTrackIdx];
+        if (musicTrackTitle && track) {
+            musicTrackTitle.textContent = track.title;
+        }
+        if (musicDisc) {
             musicDisc.classList.add("playing");
+            // Hiệu ứng nảy nhẹ của đĩa khi chuyển bài
+            musicDisc.classList.remove("pop");
+            void musicDisc.offsetWidth; // kích hoạt lại animation
+            musicDisc.classList.add("pop");
+        }
+        if (soundWave) {
             soundWave.classList.add("active");
-            musicStatusText.textContent = "Tắt nhạc";
-        } else {
-            musicDisc.classList.remove("playing");
-            soundWave.classList.remove("active");
-            musicStatusText.textContent = "Bật nhạc";
         }
     }
 
-    function toggleMusic() {
-        if (!bgMusic) return;
-        if (isMusicPlaying) {
-            bgMusic.pause();
-            setMusicState(false);
+    function playTrack(index, showToast = true) {
+        if (!bgMusic || playlist.length === 0) return;
+        currentTrackIdx = (index + playlist.length) % playlist.length;
+        const track = playlist[currentTrackIdx];
+
+        bgMusic.src = track.src;
+        try {
+            bgMusic.currentTime = 0;
+        } catch (e) { }
+
+        bgMusic.play().then(() => {
+            isMusicPlaying = true;
+            updateTrackUI();
+            if (showToast) {
+                showCheer(`🎵 Đang phát: ${track.title}`, 2600);
+            }
+        }).catch((err) => {
+            console.log("Audio play prevented or file not found:", err);
+            updateTrackUI();
+        });
+    }
+
+    // TÍNH NĂNG ĐĨA HÁT: Mỗi khi bấm vào đĩa hát sẽ ĐỔI QUA BÀI KẾ TIẾP!
+    function nextTrack() {
+        if (playlist.length <= 1) {
+            // Nếu chỉ có 1 bài: phát lại bài từ đầu kèm thông báo dễ thương
+            if (bgMusic) {
+                try {
+                    bgMusic.currentTime = 0;
+                } catch (e) { }
+                bgMusic.play().catch(() => { });
+                updateTrackUI();
+            }
+            showCheer(`🎵 Đang phát: ${playlist[0].title}`, 2200);
         } else {
-            bgMusic.play().then(() => {
-                setMusicState(true);
-            }).catch(e => {
-                console.log("Audio play prevented:", e);
-                setMusicState(false);
-            });
+            // Chuyển sang bài kế tiếp trong danh sách
+            const nextIdx = (currentTrackIdx + 1) % playlist.length;
+            playTrack(nextIdx, true);
         }
     }
 
     if (musicBtn) {
-        musicBtn.addEventListener("click", toggleMusic);
+        musicBtn.addEventListener("click", nextTrack);
     }
 
-    // Tự động kích hoạt nhạc khi có tương tác chạm đầu tiên
+    // Tự động chuyển sang bài tiếp theo khi bài hiện tại hát xong
+    if (bgMusic) {
+        bgMusic.addEventListener("ended", () => {
+            const nextIdx = (currentTrackIdx + 1) % playlist.length;
+            playTrack(nextIdx, true);
+        });
+
+        // Xử lý an toàn nếu một bài hát chưa có file trên máy
+        bgMusic.addEventListener("error", () => {
+            console.warn("Lỗi tải tệp âm thanh:", bgMusic.src);
+            if (playlist.length > 1 && currentTrackIdx !== 0) {
+                showCheer("Chưa tìm thấy tệp bài hát mới, đang phát bài quen thuộc nha ♡", 2800);
+                playTrack(0, false);
+            }
+        });
+    }
+
+    // Tự động kích hoạt nhạc khi có tương tác chạm đầu tiên trên màn hình
     function tryAutoplayOnce() {
         if (!isMusicPlaying && bgMusic) {
-            bgMusic.play().then(() => {
-                setMusicState(true);
-            }).catch(() => {
-                // Sẽ kích hoạt khi người dùng bấm nút bắt đầu
-            });
+            playTrack(currentTrackIdx, false);
         }
         document.removeEventListener("touchstart", tryAutoplayOnce);
         document.removeEventListener("click", tryAutoplayOnce);
@@ -250,12 +303,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentStage = 0; // 0: Intro, 1..6: Challenges, 7: Treasure
     const stageInfo = [
         { name: "Khởi hành", tag: "Bắt đầu" },
-        { name: "Cửa ngõ ngọt ngào", tag: "Thử thách 1 / 6" },
+        { name: "Cánh cửa màu hồng", tag: "Thử thách 1 / 6" },
         { name: "Thu thập yêu thương", tag: "Thử thách 2 / 6" },
         { name: "Thấu hiểu trái tim", tag: "Thử thách 3 / 6" },
-        { name: "Mở khóa tình yêu", tag: "Thử thách 4 / 6" },
+        { name: "Mở khoá tình yêu", tag: "Thử thách 4 / 6" },
         { name: "Mảnh ghép hoàn hảo", tag: "Thử thách 5 / 6" },
-        { name: "Chiếc bánh diệu kỳ", tag: "Thử thách 6 / 6" },
+        { name: "Bánh kem ngọt ngào", tag: "Thử thách 6 / 6" },
         { name: "Kho báu sinh nhật", tag: "Hoàn thành ♡" }
     ];
 
@@ -335,11 +388,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnStart = document.getElementById("btn-start");
     if (btnStart) {
         btnStart.addEventListener("click", () => {
-            // Phát nhạc
-            if (bgMusic && !isMusicPlaying) {
-                bgMusic.play().then(() => setMusicState(true)).catch(() => {});
+            // Bắt đầu phát nhạc nếu chưa phát
+            if (!isMusicPlaying) {
+                playTrack(currentTrackIdx, false);
             }
-            showCheer("Cuộc phiêu lưu bắt đầu rồi nè! Chúc cục cưng vượt ải thành công nhé ✨");
+            showCheer("Cuộc phiêu lưu bắt đầu rồi nè! Chúc cục cưng vượt ải thành công nhen ✨");
             goToStage(1);
         });
     }
@@ -382,17 +435,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (isCorrect) {
                     btn.classList.add("correct-pick");
                     feedback.className = "feedback-msg success";
-                    feedback.textContent = "Chính xác luôn! Cậu chính là món quà kỳ diệu nhất mà vũ trụ ban tặng ♡";
+                    feedback.textContent = "Chính xác luôn! Bé iu chính là món quà kỳ diệu nhất mà vũ trụ ban tặng ♡";
                     feedback.hidden = false;
                     triggerConfettiBurst(1500, 35);
-                    showCheer("Xuất sắc quá cục cưng ơi! Trạm tiếp theo đang mở ra nè 🥰");
+                    showCheer("Xuất sắc quá cục cưng oiii! Trạm tiếp theo đang mở ra nè 🥰");
                     setTimeout(() => goToStage(2), 1600);
                 } else {
                     btn.classList.add("wrong-pick");
                     feedback.className = "feedback-msg error";
-                    feedback.textContent = "Chưa phải đâu nè bé ơi, thử lại câu trả lời ngọt ngào hơn xem nào ♡";
+                    feedback.textContent = "Chưa phải đâu bé ơi, chọn lại câu trả lời ngọt ngào hơn đi ♡";
                     feedback.hidden = false;
-                    showCheer("Hong sao đâu nè, tớ tin cậu chọn đúng mà! Thử lại nha thương thương 💕");
+                    showCheer("Hong sao đâu nè, iu tin bé chọn đúng mà! Thử lại nho thuông thuông 💕");
                     setTimeout(() => btn.classList.remove("wrong-pick"), 800);
                 }
             };
@@ -423,7 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
             collectedCount++;
             countDisplay.textContent = collectedCount;
 
-            // Hiệu ứng ngôi sao nhỏ rơi vào hũ
+            // Hiệu ứng ngôi sao nhỏ rơi vào lọ thủy tinh
             const miniStar = document.createElement("span");
             miniStar.textContent = "⭐";
             miniStar.style.fontSize = "16px";
@@ -437,10 +490,10 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 wishJar.classList.add("drag-over");
                 feedback.className = "feedback-msg success";
-                feedback.textContent = "Cả 3 ngôi sao điều ước đã được gom trọn vào hũ tình yêu! ✨";
+                feedback.textContent = "Cả 3 ngôi sao đã được gom trọn vào bình ước nguyện! ✨";
                 feedback.hidden = false;
                 triggerConfettiBurst(2000, 50);
-                showCheer("You are doing great, my love! 3 điều ước ngọt ngào đã được vũ trụ ghi nhận! 💕");
+                showCheer("You are doing great, my love! 3 điều ước ngọt ngào đã được lưu giữ trong lọ thủy tinh roii nha! 💕");
                 setTimeout(() => goToStage(3), 1800);
             }
         }
@@ -509,17 +562,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (isCorrect) {
                     btn.classList.add("correct-pick");
                     feedback.className = "feedback-msg success";
-                    feedback.textContent = "Chuẩn không cần chỉnh! Cậu luôn xứng đáng nhận được mọi điều dịu dàng nhất ♡";
+                    feedback.textContent = "Đúng luông! Bé iu luôn xứng đáng nhận được mọi điều dịu dàng nhất ♡";
                     feedback.hidden = false;
                     triggerConfettiBurst(1500, 35);
-                    showCheer("Đúng là người yêu tớ hiểu tớ nhất trần đời! Yêu ghê á 🥰");
+                    showCheer("Đúng là người yêu em hiểu em nhất trên đời! Yêu ghê áaaaaaa 🥰");
                     setTimeout(() => goToStage(4), 1600);
                 } else {
                     btn.classList.add("wrong-pick");
                     feedback.className = "feedback-msg error";
-                    feedback.textContent = "Điều này cũng đúng, nhưng tớ muốn làm nhiều hơn thế nữa cho cậu cơ ♡";
+                    feedback.textContent = "Điều này cũng đúng, nhưng em muốn làm nhiều hơn nữa cho anh ó ♡";
                     feedback.hidden = false;
-                    showCheer("Bé thử lại nha, tớ còn muốn cưng chiều cậu hơn nữa nè! 💕");
+                    showCheer("Bé iu thử lại nha, iu còn muốn cưng chiều bé hơn nữa ó! 💕");
                     setTimeout(() => btn.classList.remove("wrong-pick"), 800);
                 }
             };
@@ -536,22 +589,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         feedback.hidden = true;
         lockTarget.classList.remove("unlocked", "drag-over");
-        lockLabel.textContent = "Khóa Trái Tim";
+        lockLabel.textContent = "Khoá Trái Tim";
         key.style.display = "flex";
 
         function unlockHeart() {
             if (unlocked) return;
             unlocked = true;
             lockTarget.classList.add("unlocked");
-            lockLabel.textContent = "Đã Mở Khóa! 💖";
+            lockLabel.textContent = "Đã Mở Khoá! 💖";
             key.style.display = "none";
 
             feedback.className = "feedback-msg success";
-            feedback.textContent = "Trái tim của tớ đã được cậu mở khóa hoàn toàn rồi nè! ♡";
+            feedback.textContent = "Trái tim của iu đã được bé mở khoá hoàn toàn rồi nè! ♡";
             feedback.hidden = false;
 
             triggerConfettiBurst(2200, 60);
-            showCheer("Oa! You stole my heart! Cậu mở khóa trái tim tớ rồi nè ♡");
+            showCheer("Õmg! You stole my heart! Bé mở khoá trái tim iu hay zay ♡");
             setTimeout(() => goToStage(5), 1800);
         }
 
@@ -673,16 +726,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 const isCorrect = userSlots.every((s, i) => s === targetWords[i]);
                 if (isCorrect) {
                     feedback.className = "feedback-msg success";
-                    feedback.textContent = "Hoàn hảo! HAPPY BIRTHDAY MY LOVE ♡ Cậu là mảnh ghép trọn vẹn nhất!";
+                    feedback.textContent = "Perfect! HAPPY BIRTHDAY MY LOVE ♡ thh là mảnh ghép trọn vẹn nhất của iu lun!";
                     feedback.hidden = false;
                     triggerConfettiBurst(2000, 50);
-                    showCheer("Cục cưng tài giỏi quá trời ơi! Chỉ còn 1 trạm nữa là tới kho báu rồi! 🌟");
+                    showCheer("Cục cưng giỏi quá trời lunnn! Chỉ còn 1 trạm nữa là tới kho báu rồi ó! 🌟");
                     setTimeout(() => goToStage(6), 1800);
                 } else {
                     feedback.className = "feedback-msg error";
-                    feedback.textContent = "Thứ tự chưa đúng rồi nè, bấm 'Xếp lại' để thử lại nha cục cưng ♡";
+                    feedback.textContent = "Thứ tự chưa đúng nè, bấm 'Xếp lại' để thử lại nha cục cưng ♡";
                     feedback.hidden = false;
-                    showCheer("Hong sao nè bé ơi, bấm nút Xếp lại rồi thử lại xíu nha thương thương! 💕");
+                    showCheer("Hong sao nè bé iu ơi, bấm nút 'Xếp lại' rồi thử lại nhen! 💕");
                 }
             }
         }
@@ -710,17 +763,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         candleFlame.classList.remove("lit");
         successBox.hidden = true;
-        instruction.textContent = "👉 Chạm vào nến để thắp sáng 👈";
+        instruction.textContent = "👉 Chạm vào đèn cầy để thắp sáng 👈";
 
         function lightCandle() {
             if (candleLit) return;
             candleLit = true;
             candleFlame.classList.add("lit");
-            instruction.textContent = "✨ Ngọn nến đã sáng rực rỡ ✨";
+            instruction.textContent = "✨ Ngọn đèn đã toả sáng rực rỡ ✨";
             instruction.style.color = "#e07d00";
 
             triggerConfettiBurst(2000, 45);
-            showCheer("Ước một điều ước sinh nhật thật đẹp nhé người tớ thương! 🕯️💖");
+            showCheer("Ước một điều ước sinh nhật thiệt đẹp nha người em thương! 🕯️💖");
 
             setTimeout(() => {
                 successBox.hidden = false;
@@ -731,13 +784,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         btnUnlock.onclick = () => {
             triggerConfettiBurst(4000, 100);
-            showCheer("Chúc mừng sinh nhật! Kho báu tình yêu đã mở ra dành riêng cho cậu! 🎁💖", 4500);
+            showCheer("Chúc mừng sinh nhật bé iu! Kho báu tình yêu đã mở ra dành riêng cho thh thoii đó! 🎁💖", 4500);
             goToStage(7);
         };
     }
 
     // --------------------------------------------------------
-    // 7. KHO BÁU BÍ MẬT: ALBUM 26 ẢNH & LỜI CHÚC (TREASURE)
+    // 7. KHO BÁU BÍ MẬT: ALBUM 23 ẢNH & LỜI CHÚC (TREASURE)
     // --------------------------------------------------------
     let currentSlideIdx = 0;
     let autoSlideTimer = null;
@@ -781,7 +834,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slideImg.src = photo.src;
                 slideImg.onerror = () => {
                     // Nếu một ảnh nào đó không tải được, hiển thị ảnh kế tiếp
-                    slideImg.src = "images/1.jpg";
+                    slideImg.src = "images/p1.jpg";
                 };
                 slideImg.style.opacity = "1";
             }, 150);
@@ -876,7 +929,7 @@ document.addEventListener("DOMContentLoaded", () => {
             item.className = "polaroid-item";
             item.innerHTML = `
                 <div class="polaroid-img-box">
-                    <img src="${photo.src}" alt="Kỷ niệm ${idx + 1}" loading="lazy" onerror="this.src='images/1.jpg'">
+                    <img src="${photo.src}" alt="Kỷ niệm ${idx + 1}" loading="lazy" onerror="this.src='images/p1.jpg'">
                 </div>
                 <div class="polaroid-note">Ảnh ${idx + 1} ♡</div>
             `;
@@ -933,7 +986,7 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 const stored = localStorage.getItem(STORAGE_KEY);
                 if (stored) wishes = JSON.parse(stored);
-            } catch (e) {}
+            } catch (e) { }
 
             wishes.forEach(item => {
                 const el = document.createElement("div");
@@ -950,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const text = wishInput.value.trim();
             if (!text) {
                 wishFeedback.className = "feedback-msg error";
-                wishFeedback.textContent = "Hãy viết điều gì đó trước khi gửi nhé cục cưng ơi ♡";
+                wishFeedback.textContent = "Hãy viết điều gì đó trước khi gửi nho cục cưng ♡";
                 wishFeedback.hidden = false;
                 return;
             }
@@ -966,15 +1019,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (stored) wishes = JSON.parse(stored);
                 wishes.unshift(newWish);
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes));
-            } catch (e) {}
+            } catch (e) { }
 
             wishInput.value = "";
             wishFeedback.className = "feedback-msg success";
-            wishFeedback.textContent = "Lời nhắn ngọt ngào của cậu đã được gửi và lưu giữ cẩn thận rồi nè! ♡";
+            wishFeedback.textContent = "Lời nhắn ngọt ngào của anh iu đã được gửi và lưu giữ cẩn thận rồi nè! ♡";
             wishFeedback.hidden = false;
 
             triggerConfettiBurst(1500, 30);
-            showCheer("Cảm ơn tình yêu to bự! Lời nhắn của cậu đã được cất vào tim tớ rồi nè 🥰");
+            showCheer("Cảm ơn cục cưng nha! Lời nhắn của ăm chã đã được bà chã cất vào tim rồi nè 🥰");
             loadSavedWishes();
         };
 
@@ -990,13 +1043,13 @@ document.addEventListener("DOMContentLoaded", () => {
             btnReplayAlbum.onclick = () => {
                 // Cuộn mượt lên phần thư chúc mừng & album
                 screenTreasure.scrollIntoView({ behavior: "smooth" });
-                showCheer("Cùng ngắm lại những khoảnh khắc tuyệt vời của hai đứa mình nhé! ♡");
+                showCheer("Cùng coi lại những khoảnh khắc tuyệt vời của hai đứa mình nhe! ♡");
             };
         }
 
         if (btnRestartGame) {
             btnRestartGame.onclick = () => {
-                if (confirm("Cục cưng có muốn phiêu lưu lại từ đầu không nè?")) {
+                if (confirm("Cục cưng có muốn phiêu lưu lại từ đầu hong nè?")) {
                     goToStage(0);
                 }
             };

@@ -116,17 +116,47 @@ body {
     }
 }
 
+.music-disc.pop {
+    animation: discPop 0.35s ease;
+}
+
+@keyframes discPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.22); }
+    100% { transform: scale(1); }
+}
+
 .music-label {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    max-width: 120px;
 }
 
-#music-status-text {
-    font-size: 11px;
+.music-track-title {
+    font-size: 11.5px;
     font-weight: 700;
     color: var(--primary-dark-pink);
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.music-sub-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.next-hint {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #9c6c84;
 }
 
 .sound-wave {
@@ -768,45 +798,60 @@ body {
     color: var(--deep-purple);
 }
 
-/* Hũ nhận sao */
+/* Lọ thủy tinh nhận sao (Glass Wish Jar) */
 .wish-jar-target {
-    width: 150px;
-    height: 150px;
+    width: 154px;
+    height: 156px;
     border-radius: var(--radius-lg);
-    background: linear-gradient(180deg, #fff5f8 0%, #fae6f0 100%);
-    border: 2px dashed #ff8fa7;
+    background: linear-gradient(180deg, rgba(255, 245, 250, 0.94) 0%, rgba(243, 235, 255, 0.94) 100%);
+    border: 2px dashed #ff9ab1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
     transition: all 0.3s ease;
     position: relative;
+    box-shadow: 0 6px 20px rgba(255, 101, 132, 0.12);
 }
 
 .wish-jar-target.drag-over {
     background: #ffe3ec;
     border-color: var(--primary-pink);
     transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(255, 101, 132, 0.4);
+    box-shadow: 0 0 25px rgba(255, 101, 132, 0.45);
 }
 
-.jar-body {
+.jar-visual {
     position: relative;
-    font-size: 54px;
-    line-height: 1;
+    width: 84px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-jar-svg {
+    filter: drop-shadow(0 4px 10px rgba(180, 90, 140, 0.22));
+    transition: transform 0.3s ease;
+}
+
+.wish-jar-target.drag-over .glass-jar-svg {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 14px rgba(255, 101, 132, 0.6));
 }
 
 .jar-glow {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(248, 184, 78, 0.6) 0%, transparent 70%);
-    top: 50%;
+    background: radial-gradient(circle, rgba(255, 225, 120, 0.75) 0%, transparent 70%);
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: glowPulse 2s infinite alternate;
+    pointer-events: none;
 }
 
 @keyframes glowPulse {
@@ -816,9 +861,24 @@ body {
     }
 
     to {
-        opacity: 0.8;
+        opacity: 0.85;
         transform: translate(-50%, -50%) scale(1.2);
     }
+}
+
+.jar-collected-stars {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 48px;
+    gap: 2px;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .jar-label {
