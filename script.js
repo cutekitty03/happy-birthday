@@ -971,8 +971,11 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
-    // --- HỘP GỬI ĐIỀU ƯỚC / LỜI NHẮN ---
+    // --- HỘP GỬI ĐIỀU ƯỚC / LỜI NHẮN VỀ EMAIL ---
     function setupWishBox() {
+        // 👉 ĐIỀN ĐỊA CHỈ EMAIL CỦA BẠN VÀO ĐÂY ĐỂ NHẬN LỜI NHẮN VỀ HÒM THƯ:
+        const RECEIVER_EMAIL = "bibicao1101@gmail.com";
+
         const wishInput = document.getElementById("wish-input");
         const btnSendWish = document.getElementById("btn-send-wish");
         const wishFeedback = document.getElementById("wish-feedback");
@@ -999,7 +1002,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        btnSendWish.onclick = () => {
+        btnSendWish.onclick = async () => {
             const text = wishInput.value.trim();
             if (!text) {
                 wishFeedback.className = "feedback-msg error";
@@ -1008,11 +1011,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+            const sendTime = new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" }) + " - " + new Date().toLocaleDateString("vi-VN");
             const newWish = {
                 text: text,
-                time: new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" }) + " - " + new Date().toLocaleDateString("vi-VN")
+                time: sendTime
             };
 
+            // 1. Lưu vào máy cục bộ (localStorage)
             let wishes = [];
             try {
                 const stored = localStorage.getItem(STORAGE_KEY);
@@ -1020,6 +1025,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 wishes.unshift(newWish);
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes));
             } catch (e) { }
+
+            // 2. Gửi tự động về Email của bạn qua FormSubmit (hoàn toàn miễn phí)
+            const originalBtnText = btnSendWish.innerHTML;
+            btnSendWish.disabled = true;
+            btnSendWish.innerHTML = "Đang gửi về trái tim... 💌";
+
+            if (RECEIVER_EMAIL && !RECEIVER_EMAIL.includes("your-email")) {
+                try {
+                    await fetch(`https://formsubmit.co/ajax/${RECEIVER_EMAIL}`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify({
+                            _subject: "💌 Lời nhắn sinh nhật từ người ấy!",
+                            "Thời gian": sendTime,
+                            "Nội dung lời nhắn": text
+                        })
+                    });
+                } catch (err) {
+                    console.log("Email sending error or offline:", err);
+                }
+            }
+
+            btnSendWish.disabled = false;
+            btnSendWish.innerHTML = originalBtnText;
 
             wishInput.value = "";
             wishFeedback.className = "feedback-msg success";

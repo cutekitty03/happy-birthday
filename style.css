@@ -19,7 +19,7 @@
     --radius-md: 16px;
     --radius-sm: 10px;
     --font-main: 'Quicksand', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-handwriting: 'Patrick Hand', cursive;
+    --font-handwriting: var(--font-main);
 }
 
 * {
@@ -121,9 +121,17 @@ body {
 }
 
 @keyframes discPop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.22); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.22);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .music-label {
@@ -1335,8 +1343,9 @@ body {
 }
 
 .letter-signature {
-    font-family: var(--font-handwriting);
-    font-size: 22px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-style: italic;
     color: var(--primary-dark-pink);
     text-align: right;
     margin-top: 16px;
