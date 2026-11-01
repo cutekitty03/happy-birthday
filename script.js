@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { title: "Nơi này có anh iu ♡", src: "music/1.mp3" },
         { title: "Mặt trời của em iu ♡", src: "music/2.mp3" },
         { title: "Mỗi ngày iu iu ♡", src: "music/3.mp3" },
-        { title: "Thanh Hưng iu Thảo Trinh 04 ♡", src: "music/4.mp3" },
+        { title: "Thanh Hưng iu Thảo Trinh ♡", src: "music/4.mp3" },
         { title: "Thh là siu nhưn ♡", src: "music/5.mp3" },
         { title: "iu là bà chã hơm ♡", src: "music/6.mp3" },
         { title: "Thinking 'bout you ♡", src: "music/7.mp3" },
@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (isCorrect) {
                     btn.classList.add("correct-pick");
                     feedback.className = "feedback-msg success";
-                    feedback.textContent = "Chính xác luôn! Bé iu chính là món quà kỳ diệu nhất mà vũ trụ ban tặng ♡";
+                    feedback.textContent = "Chính xác luôn! Bé iu chính là món quà kỳ diệu nhất mà vũ trụ đem tới ó ♡";
                     feedback.hidden = false;
                     triggerConfettiBurst(1500, 35);
                     showCheer("Xuất sắc quá cục cưng oiii! Trạm tiếp theo đang mở ra nè 🥰");
@@ -600,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
             key.style.display = "none";
 
             feedback.className = "feedback-msg success";
-            feedback.textContent = "Trái tim của iu đã được bé mở khoá hoàn toàn rồi nè! ♡";
+            feedback.textContent = "Trái tim của iu đã được bé mở khoá rồi nè! ♡";
             feedback.hidden = false;
 
             triggerConfettiBurst(2200, 60);
@@ -839,7 +839,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slideImg.style.opacity = "1";
             }, 150);
 
-            slideCounter.textContent = `Ảnh ${currentSlideIdx + 1} / ${photoList.length}`;
+            slideCounter.textContent = `Hình ${currentSlideIdx + 1} / ${photoList.length}`;
             slideCaption.textContent = photo.caption;
         }
 
@@ -931,7 +931,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="polaroid-img-box">
                     <img src="${photo.src}" alt="Kỷ niệm ${idx + 1}" loading="lazy" onerror="this.src='images/p1.jpg'">
                 </div>
-                <div class="polaroid-note">Ảnh ${idx + 1} ♡</div>
+                <div class="polaroid-note">Hình ${idx + 1} ♡</div>
             `;
             item.onclick = () => openLightbox(idx);
             photoGrid.appendChild(item);
@@ -1021,7 +1021,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Xóa ô nhập để người ấy có thể gửi thêm nhiều lời nhắn khác!
             wishInput.value = "";
             wishFeedback.className = "feedback-msg success";
-            wishFeedback.textContent = "Lời nhắn ngọt ngào của anh iu đã bay vèo về hòm thư rồi nè! Bé có thể gửi thêm nhiều lời nhắn nữa nha ♡";
+            wishFeedback.textContent = "Lời nhắn ngọt ngào của ăm chã đã bay vèo về hòm thư rồi nè! Bé iu có thể gửi thêm nhiều lời nhắn nữa cho bà chã nha ♡";
             wishFeedback.hidden = false;
 
             triggerConfettiBurst(1500, 30);
@@ -1038,7 +1038,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btnReplayAlbum.onclick = () => {
                 // Cuộn mượt lên phần thư chúc mừng & album
                 screenTreasure.scrollIntoView({ behavior: "smooth" });
-                showCheer("Cùng coi lại những khoảnh khắc tuyệt vời của hai đứa mình nhe! ♡");
+                showCheer("Cùng coi lại những khoảnh khắc dễ thương của hai đứa mình nhe! ♡");
             };
         }
 
