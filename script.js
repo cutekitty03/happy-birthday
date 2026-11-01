@@ -973,34 +973,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- HỘP GỬI ĐIỀU ƯỚC / LỜI NHẮN VỀ EMAIL ---
     function setupWishBox() {
-        // 👉 ĐIỀN ĐỊA CHỈ EMAIL CỦA BẠN VÀO ĐÂY ĐỂ NHẬN LỜI NHẮN VỀ HÒM THƯ:
+        // 👉 ĐỊA CHỈ EMAIL NHẬN LỜI NHẮN CỦA BẠN:
         const RECEIVER_EMAIL = "bibicao1101@gmail.com";
 
         const wishInput = document.getElementById("wish-input");
         const btnSendWish = document.getElementById("btn-send-wish");
         const wishFeedback = document.getElementById("wish-feedback");
-        const savedList = document.getElementById("saved-wishes-list");
-
-        const STORAGE_KEY = "romance_birthday_wishes";
-
-        function loadSavedWishes() {
-            savedList.innerHTML = "";
-            let wishes = [];
-            try {
-                const stored = localStorage.getItem(STORAGE_KEY);
-                if (stored) wishes = JSON.parse(stored);
-            } catch (e) { }
-
-            wishes.forEach(item => {
-                const el = document.createElement("div");
-                el.className = "saved-wish-item";
-                el.innerHTML = `
-                    <div class="saved-wish-text">${item.text}</div>
-                    <div class="saved-wish-time">${item.time}</div>
-                `;
-                savedList.appendChild(el);
-            });
-        }
 
         btnSendWish.onclick = async () => {
             const text = wishInput.value.trim();
@@ -1012,21 +990,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const sendTime = new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" }) + " - " + new Date().toLocaleDateString("vi-VN");
-            const newWish = {
-                text: text,
-                time: sendTime
-            };
 
-            // 1. Lưu vào máy cục bộ (localStorage)
-            let wishes = [];
-            try {
-                const stored = localStorage.getItem(STORAGE_KEY);
-                if (stored) wishes = JSON.parse(stored);
-                wishes.unshift(newWish);
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes));
-            } catch (e) { }
-
-            // 2. Gửi tự động về Email của bạn qua FormSubmit (hoàn toàn miễn phí)
+            // Hiệu ứng đang gửi
             const originalBtnText = btnSendWish.innerHTML;
             btnSendWish.disabled = true;
             btnSendWish.innerHTML = "Đang gửi về trái tim... 💌";
@@ -1053,17 +1018,15 @@ document.addEventListener("DOMContentLoaded", () => {
             btnSendWish.disabled = false;
             btnSendWish.innerHTML = originalBtnText;
 
+            // Xóa ô nhập để người ấy có thể gửi thêm nhiều lời nhắn khác!
             wishInput.value = "";
             wishFeedback.className = "feedback-msg success";
-            wishFeedback.textContent = "Lời nhắn ngọt ngào của anh iu đã được gửi và lưu giữ cẩn thận rồi nè! ♡";
+            wishFeedback.textContent = "Lời nhắn ngọt ngào của anh iu đã bay vèo về hòm thư rồi nè! Bé có thể gửi thêm nhiều lời nhắn nữa nha ♡";
             wishFeedback.hidden = false;
 
             triggerConfettiBurst(1500, 30);
             showCheer("Cảm ơn cục cưng nha! Lời nhắn của ăm chã đã được bà chã cất vào tim rồi nè 🥰");
-            loadSavedWishes();
         };
-
-        loadSavedWishes();
     }
 
     // --- CÁC NÚT REPLAY TIỆN ÍCH ---
