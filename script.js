@@ -12,25 +12,25 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: 2, src: "images/p2.jpg", caption: "Mỗi tấm hình là một mảnh ghép ký ức vô giá mà iu luôn nâng niu cất giữ." },
         { id: 3, src: "images/p3.jpg", caption: "Nụ cười rạng rỡ của bé mỗi khi bên cạnh iu luôn là liều thuốc chữa lành hiệu quả ó." },
         { id: 4, src: "images/p4.jpg", caption: "Cảm ơn thh đã khiến từng con đường ở Cần Thơ đều trở thành kỷ niệm đẹp của tht." },
-        { id: 5, src: "images/p5.jpg", caption: "Không cần quá nhiều quá cáp, chỉ cần thh ở bên cạnh là tht đã thấy mình có một ngày trọn vẹn ròii." },
+        { id: 5, src: "images/p5.jpg", caption: "Không cần quá nhiều quà cáp, chỉ cần thh ở bên cạnh là tht đã thấy mình có một ngày trọn vẹn ròii." },
         { id: 6, src: "images/p6.jpg", caption: "Bên thh, iu luôn được là chính mình – less perfect, but much happier." },
         { id: 7, src: "images/p7.jpg", caption: "Cảm ơn bé iu vì đã luôn kiên nhẫn, dịu dàng và chở che cho iu iu từng bước một." },
         { id: 8, src: "images/p8.jpg", caption: "Hạnh phúc đôi khi chỉ đơn giản là được cùng nhau làm những điều bình dị ở những nơi quen thuộc." },
-        { id: 9, src: "images/p9.jpg", caption: "Thích nhất cái cách anh iu cười hong thấy mặt trời mỗi khi nắm tay đi với iu iu." },
+        { id: 9, src: "images/p9.jpg", caption: "Thích cái cách anh iu cười hong thấy mặt trời mỗi khi nắm tay đi với iu iu." },
         { id: 10, src: "images/p10.jpg", caption: "Cảm ơn anh iu đã luôn là chỗ dựa vững chắc cho em iu mỗi khi em cần." },
         { id: 11, src: "images/p11.jpg", caption: "Không phải lần đầu tiên đi với nhau nhưng luôn là trải nghiệm đầu tiên khi ở bên thh." },
-        { id: 12, src: "images/p12.jpg", caption: "Những tấm hình daily thh không ngại share, iu đều thấy dễ thương moa moa." },
+        { id: 12, src: "images/p12.jpg", caption: "Những tấm hình daily thh không ngại share, iu đều thấy dễ thương hehe" },
         { id: 13, src: "images/p13.jpg", caption: "Cảm ơn bé đã chở iu đi qua những ngày nắng đẹp rực rỡ lẫn những cơn mưa rào bất chợt." },
         { id: 14, src: "images/p14.jpg", caption: "Cảm ơn Thanh Hưng vì đã luôn ở đó, lắng nghe và đồng hành với Thảo Trinh ngay những lúc em không nói nên lời." },
         { id: 15, src: "images/p15.jpg", caption: "Thích được anh iu hun hun lắm lunnn!!!" },
         { id: 16, src: "images/p16.jpg", caption: "Mỗi ngày trôi qua lại thấy yêu thương bé iu thim nhìu nhìu nũa." },
-        { id: 17, src: "images/p17.jpg", caption: "Khoảnh khắc ấy, em biết mình đã tìm thấy một bầu trời chmúa hmề của riêng mình." },
+        { id: 17, src: "images/p17.jpg", caption: "Khoảnh khắc này, em biết mình đã tìm thấy một bầu trời chmúa hmề của riêng mình." },
         { id: 18, src: "images/p18.jpg", caption: "Thh chính là điều may mắn và dịu dàng nhất mà zũ chụ đã ưu ái ban tặng cho tht ó." },
         { id: 19, src: "images/p19.jpg", caption: "Nơi ghi dấu nụ cười tỏa nắng của người em iu thương nhất." },
-        { id: 20, src: "images/p20.jpg", caption: "Chỉ cần nhìn thấy nụ cười của bé iu là mọi âu lo trong ngày của iu iu đều tan biến hết." },
+        { id: 20, src: "images/p20.jpg", caption: "Chỉ cần nhìn thấy nụ cười của bé iu là âu lo trong ngày của iu iu đều tan biến hết." },
         { id: 21, src: "images/p21.jpg", caption: "Mỗi chuyến đi xa đối với iu đều là một trang mới trong cuốn nhật ký tình yêu của hai đứa mình nè." },
         { id: 22, src: "images/p22.jpg", caption: "Anh iu của em thiệt là ngầu quá điiiii!" },
-        { id: 23, src: "images/p23.jpg", caption: "Dù thời gian có trôi nhanh thế nào, tình cảm dành cho thh sẽ luôn vẹn nguyên như ngày đầu. Chúc mừng sinh nhật tình yêu to bự của em! Yêu bé nhìu hơn zũ chụ này lun đó nhe hehe ♡" }
+        { id: 23, src: "images/p23.jpg", caption: "Dù thời gian có trôi nhanh như nào, tình cảm dành cho thh sẽ luôn vẹn nguyên như ngày đầu. Chúc mừng sinh nhật tình yêu to bự của em! Yêu bé nhìu hơn zũ chụ này lun đó nhe hehe ♡" }
     ];
 
 
@@ -984,7 +984,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const text = wishInput.value.trim();
             if (!text) {
                 wishFeedback.className = "feedback-msg error";
-                wishFeedback.textContent = "Hãy viết điều gì đó trước khi gửi nho cục cưng ♡";
+                wishFeedback.textContent = "Hãy viết gì đó ngọt ngào gửi cho em nho cục cưng ♡";
                 wishFeedback.hidden = false;
                 return;
             }
